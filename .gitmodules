@@ -1,0 +1,9 @@
+[submodule "HeraBack"]
+	path = HeraBack
+	url = git@github.com:Moxiii/HeraBack.git
+[submodule "HeraFront"]
+	path = HeraFront
+	url = git@github.com:Moxiii/HeraFront.git
+[submodule "HeraScrap"]
+	path = HeraScrap
+	url = git@github.com:Moxiii/HeraScrap.git
