@@ -1,0 +1,8 @@
+FROM node:23-alpine
+RUN npm install -g @angular/cli@latest
+WORKDIR /app/HeraFront
+COPY HeraFront/package.json  ./
+RUN npm install
+COPY HeraFront/ .
+EXPOSE 8082
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "8082"]
