@@ -17,8 +17,10 @@ services:
       - redis
 
     environment:
-      MYSQL_HOST: db
-      MONGO_URI : mongodb://mongo:27017/hera
+      - MYSQL_HOST= db
+      - MONGO_URI = mongodb://mongo:27017/hera
+      - JAVA_OPTS=-Dspring.devtools.restart.enabled=true -Dspring.devtools.livereload.enabled=true
+      - SPRING_PROFILES_ACTIVE=dev
     networks:
       - hera_net
   mongo:
@@ -53,6 +55,7 @@ services:
       - "8082:8082"
     volumes:
       - ./HeraFront:/app/HeraFront
+      -  node_modules:/app/HeraFront/node_modules
     networks:
       - hera_net
     

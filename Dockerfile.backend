@@ -1,7 +1,9 @@
 FROM maven:3.9.9
 WORKDIR /app/HeraBack
 COPY HeraBack/pom.xml ./
-RUN mvn install -DskipTests
+RUN mvn dependency:resolve
 COPY HeraBack/src ./src
+COPY entry.sh /entry.sh
+RUN chmod +x /entry.sh
 EXPOSE 9090
-CMD ["mvn", "spring-boot:run"]
+CMD ["/entry.sh", "backend"]
